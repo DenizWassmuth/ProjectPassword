@@ -105,6 +105,13 @@ public final class PasswordValidator {
     {
         if (password == null) { return false; }
 
-        return true;
+        boolean bIsValid = false;
+
+        bIsValid = hasMinLength(password, 8);
+        bIsValid = containsDigit(password);
+        bIsValid = containsUpperAndLower(password);
+        bIsValid = containsSpecialChar(password, password);
+
+        return bIsValid;
     };
 }
