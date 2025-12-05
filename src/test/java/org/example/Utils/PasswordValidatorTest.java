@@ -57,26 +57,11 @@ class PasswordValidatorTest {
     }
 
 
-    @Test
-    void isValid_shouldPass_whenGivenStringIsNotNullHas8DigitsUpperAndLowerSpecialCharsIsNotCommonPassword () {
+    @ParameterizedTest
+    @CsvSource({"abcDEF123,false","#Password25!,true","Password1%,true","Pa??word20,true","bl0B%er,false" })
+    void isValid_shouldPass_whenGivenStringIsNotNullHas8DigitsUpperAndLowerSpecialCharsIsNotCommonPassword(String givenPassword, boolean expected) {
 
-        String givenString = "#Hall000";
-
-        boolean expected  = true;
-
-        boolean actual = PasswordValidator.isValid(givenString);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void isValid_shouldPass_whenGivenStringHasNoDigit () {
-
-        String givenString = "#Hallooo";
-
-        boolean expected  = false;
-
-        boolean actual = PasswordValidator.isValid(givenString);
+        boolean actual = PasswordValidator.isValid(givenPassword);
 
         assertEquals(expected, actual);
     }
