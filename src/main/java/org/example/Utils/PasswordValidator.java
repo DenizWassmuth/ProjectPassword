@@ -1,5 +1,6 @@
 package org.example.Utils;
 
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -80,7 +81,7 @@ public final class PasswordValidator {
         }
 
         for (String commonPassword : commonPasswords) {
-            if (password.trim().toLowerCase().equals(commonPassword.trim().toLowerCase())) {
+            if (password.trim().toLowerCase(Locale.ROOT).equals(commonPassword.trim().toLowerCase(Locale.ROOT))) {
                 return true;
             }
         }
