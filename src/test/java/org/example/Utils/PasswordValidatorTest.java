@@ -59,7 +59,7 @@ class PasswordValidatorTest {
         String givenString = "Hallo";
         boolean expected  = true;
 
-        boolean actual = Character.isUpperCase(givenString.charAt(0)) &&  Character.isLowerCase(givenString.charAt(1));
+        boolean actual = Character.isUpperCase(givenString.charAt(0)) && Character.isLowerCase(givenString.charAt(1));
 
         assertEquals(expected, actual);
     }
