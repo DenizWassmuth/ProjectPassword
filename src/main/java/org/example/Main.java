@@ -12,11 +12,10 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        boolean bExit = false;
-        boolean bGenerate = false;
         boolean bInput = false;
+        boolean bGenerate = false;
 
-        while (!bExit && !bGenerate && !bInput) {
+        while (!bInput || !bGenerate) {
 
             UtilsLibrary.printText(1, "Hallo, wie kann ich ihnen helfen?", 0);
             UtilsLibrary.printText(0, "1 = Passwort eingeben, 2 = Passwort automatisch generieren, 0 = Exit", 0);
@@ -31,21 +30,25 @@ public class Main {
             } else if (Input.matches("2")) {
                 bGenerate = true;
             } else {
-                bExit = true;
+                UtilsLibrary.printText(1, "Auf Wiedersehen!", 1);
+                return;
             }
         }
 
+        UtilsLibrary.printText(1, "Bitte geben sie ihren Namen ein: ", 0);
+        String Name = sc.nextLine();
+        UtilsLibrary.printText(1, "Hallo" + Name, 1);
+
+        String confirmationPassword = "";
         // TODO:add while password != confirmationPassword or 0 = exit
         if (bInput) {
-            UtilsLibrary.printText(1, "Bitte geben sie ihren Namen ein: ", 0);
-            String Name = sc.nextLine();
-            UtilsLibrary.printText(1, "Hallo" + Name, 1);
+
             UtilsLibrary.printText(0, "Bitte Passwort eingeben: ", 0);
             String password = sc.nextLine();
 
             if (PasswordValidator.isValid(password)) {
                 UtilsLibrary.printText(1, "Bitte Passwort wiederholen: ", 0);
-                String confirmationPassword = sc.nextLine();
+                confirmationPassword = sc.nextLine();
 
                 if (confirmationPassword.equals(password)) {
                     UtilsLibrary.printText(1, "Danke " + Name, 0);
