@@ -73,15 +73,11 @@ public final class PasswordValidator {
 //                "Password5", "Password6", "Password7", "Password8", "Password9", "Password10",
 //                "Password123", "AbCdeF"};
 
-//        for (String commonPassword : commonPasswords) {
-//            if (password.toLowerCase().equals(commonPassword.toLowerCase())) {
-//                return true;
-//            }
-//        }
-
-       return commonPasswords.contains(password.trim().toLowerCase(Locale.ROOT));
-
-        return false;
+        for (String commonPassword : commonPasswords) {
+            if (password.trim().toLowerCase().equals(commonPassword.trim().toLowerCase())) {
+                return true;
+            }
+        }
 
     }; // kleine interne Liste
 

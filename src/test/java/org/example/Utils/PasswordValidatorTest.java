@@ -101,7 +101,7 @@ class PasswordValidatorTest {
     @Test
     void isCommonPassword_shouldPass_whenGivenStringIsPartOfList () {
 
-        String givenString = "Password123";
+        String givenString = "Password";
 
         boolean expected  = true;
 
