@@ -65,6 +65,17 @@ class PasswordValidatorTest {
     }
 
     @Test
+    void containsUpperAndLower_ShouldPass_whenGivenStringHasOnlyUpper () {
+
+        String givenString = "HALLO";
+        boolean expected  = true;
+
+        boolean actual = Character.isUpperCase(givenString.charAt(0)) && Character.isLowerCase(givenString.charAt(1));
+
+        assertNotEquals(expected, actual);
+    }
+
+    @Test
     void containsUpperAndLower_ShouldPass_whenGivenStringHasUpperAndLower () {
 
         String givenString = "Hallo";
