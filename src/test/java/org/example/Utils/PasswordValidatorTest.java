@@ -1,10 +1,21 @@
 package org.example.Utils;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PasswordValidatorTest {
+
+    @ParameterizedTest
+    @CsvSource({"1234567,false","12345678,true","123456789,true","'',false",",false"})
+    void hasMinLength_shouldPass_whenGivenStringLengthEqualsTheMinLength(String givenPassword, boolean expected) {
+
+        boolean actual = PasswordValidator.hasMinLength(givenPassword, 8);
+
+        assertEquals(expected, actual);
+    }
 
     @Test
     void hasMinLength_shouldPass_whenGivenStringLengthIsGreaterOrEqualTo5 () {

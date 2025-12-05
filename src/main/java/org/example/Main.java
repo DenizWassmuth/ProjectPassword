@@ -35,7 +35,7 @@ public class Main {
             }
         }
 
-        // add while password != confirmationPassword or 0 = exit
+        // TODO:add while password != confirmationPassword or 0 = exit
         if (bInput) {
             UtilsLibrary.printText(1, "Bitte geben sie ihren Namen ein: ", 0);
             String Name = sc.nextLine();

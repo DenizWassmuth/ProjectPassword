@@ -16,6 +16,11 @@ import java.util.Set;
 
 public final class PasswordValidator {
     public static boolean hasMinLength(String password, int min) {
+
+        if (password == null) {
+            return false;
+        }
+
         return password.length() >= min;
     }
 
