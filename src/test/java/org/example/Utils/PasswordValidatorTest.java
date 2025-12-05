@@ -17,6 +17,14 @@ class PasswordValidatorTest {
         assertEquals(expected, actual);
     }
 
+    @ParameterizedTest
+    @CsvSource({"1a2b3c,true", "abcde,false"})
+    void containsDigit_ShouldPass_whenGivenStringHasDigits(String givenPassword, boolean expected) {
+
+        boolean actual = PasswordValidator.containsDigit(givenPassword);
+
+        assertEquals(expected, actual);
+    }
 
     @Test
     void containsDigit_ShouldPass_whenGivenStringHasDigitAtIndex1 () {

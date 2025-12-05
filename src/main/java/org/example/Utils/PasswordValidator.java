@@ -52,7 +52,6 @@ public final class PasswordValidator {
         for (int i = 0; i < password.length(); i++) {
             if (Character.isUpperCase(password.charAt(i))) {
                 bHasUpper = true;
-                return true;
             }
         }
 
@@ -60,7 +59,6 @@ public final class PasswordValidator {
         for (int i = 0; i < password.length(); i++) {
             if (Character.isLowerCase(password.charAt(i))) {
                 bHasLower = true;
-                return true;
             }
         }
 
