@@ -122,10 +122,10 @@ class PasswordValidatorTest {
         assertEquals(expected, actual);
     }
 
-//
-//    @Test
-//    void containsSpecialChar() {
-//    }
+
+    @Test
+    void containsSpecialChar() {
+    }
 //
 //    @Test
 //    void isValid() {

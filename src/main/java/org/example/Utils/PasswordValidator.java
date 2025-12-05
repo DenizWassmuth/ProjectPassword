@@ -81,7 +81,7 @@ public final class PasswordValidator {
 
         return false;
 
-    }; // kleine interne Liste
+    };
 
 //    // Bonus:
 //    public static boolean containsSpecialChar(String password, String allowed);
