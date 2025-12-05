@@ -174,9 +174,9 @@ class PasswordValidatorTest {
 
 
     @Test
-    void isValid_shouldPass_whenGivenStringIsNotNull() {
+    void isValid_shouldPass_whenGivenStringIsNotNullHas8DigitsUpperAndLowerSpecialCharsIsNotCommonPassword () {
 
-        String givenString = "Hallo";
+        String givenString = "#Hall000";
 
         boolean expected  = true;
 
