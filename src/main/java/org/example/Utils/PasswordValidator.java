@@ -1,7 +1,5 @@
 package org.example.Utils;
 
-import java.util.HashSet;
-import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -18,16 +16,18 @@ import java.util.Set;
 
 public final class PasswordValidator {
 
-    public static boolean hasMinLength(String password, int min){
+    public static boolean hasMinLength(String password, int min) {
         return password.length() >= min;
     }
 
-    public static boolean containsDigit(String password){
+    public static boolean containsDigit(String password) {
 
-        if (password == null) { return false; }
+        if (password == null) {
+            return false;
+        }
 
         char[] chars = password.toCharArray();
-        for(int i = 0; i < chars.length; i++){
+        for (int i = 0; i < chars.length; i++) {
 
             if (Character.isDigit(chars[i])) {
 
@@ -39,12 +39,14 @@ public final class PasswordValidator {
     }
 
 
-    public static boolean containsUpperAndLower(String password){
+    public static boolean containsUpperAndLower(String password) {
 
-        if (password == null) { return false; }
+        if (password == null) {
+            return false;
+        }
 
         boolean bHasUpper = false;
-        for(int i = 0; i < password.length(); i++){
+        for (int i = 0; i < password.length(); i++) {
             if (Character.isUpperCase(password.charAt(i))) {
                 bHasUpper = true;
                 return true;
@@ -52,7 +54,7 @@ public final class PasswordValidator {
         }
 
         boolean bHasLower = false;
-        for(int i = 0; i < password.length(); i++){
+        for (int i = 0; i < password.length(); i++) {
             if (Character.isLowerCase(password.charAt(i))) {
                 bHasLower = true;
                 return true;
@@ -63,13 +65,15 @@ public final class PasswordValidator {
     }
 
 
-    public static Set<String> commonPasswords = Set.of( "Password", "Password1", "Password2", "Password3", "Password4",
+    public static Set<String> commonPasswords = Set.of("Password", "Password1", "Password2", "Password3", "Password4",
             "Password5", "Password6", "Password7", "Password8", "Password9", "Password10", "Password123", "AbCdeF");
 
 
-    public static boolean isCommonPassword(String password){
+    public static boolean isCommonPassword(String password) {
 
-        if (password == null) { return false; }
+        if (password == null) {
+            return false;
+        }
 
         for (String commonPassword : commonPasswords) {
             if (password.trim().toLowerCase().equals(commonPassword.trim().toLowerCase())) {
@@ -79,12 +83,15 @@ public final class PasswordValidator {
 
         return false;
 
-    };
+    }
+
+    ;
 
     // Bonus:
-    public static boolean containsSpecialChar(String password, String allowed)
-    {
-        if (password == null) { return false; }
+    public static boolean containsSpecialChar(String password, String allowed) {
+        if (password == null) {
+            return false;
+        }
 
         char[] chars = password.toCharArray();
 
@@ -99,12 +106,16 @@ public final class PasswordValidator {
         }
 
         return false;
-    };
+    }
+
+    ;
 
     public static String specialChars = "!#-**?<>|&%$=)(";
-    public static boolean isValid(String password)
-    {
-        if (password == null) { return false; }
+
+    public static boolean isValid(String password) {
+        if (password == null) {
+            return false;
+        }
 
         boolean bIsValid = false;
 
@@ -115,5 +126,7 @@ public final class PasswordValidator {
         bIsValid = containsSpecialChar(password, specialChars);
 
         return bIsValid;
-    };
+    }
+
+    ;
 }

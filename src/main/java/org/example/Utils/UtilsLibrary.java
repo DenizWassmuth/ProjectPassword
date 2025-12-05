@@ -14,23 +14,21 @@ package org.example.Utils;
 
 public class UtilsLibrary {
 
-//   public static void printText(String text, int linesBefore, int linesAfter){
-//
-//        char[] before = new char[linesBefore];
-//        if (before.length > 0) {
-//            for (int i = 0; i < before.length; i++) {
-//                before[i] = '\n';
-//            }
-//        }
-//
-//        char[] after = new char[linesAfter];
-//        if (after.length > 0) {
-//            for (int i = 0; i < after.length; i++) {
-//                after[i] = '\n';
-//            }
-//        }
-//
-//        System.out.println(before + text + after);
-//    }
+    public static void printText(String text, int linesBefore, int linesAfter) {
+
+        char[] before = new char[linesBefore];
+        if (before.length > 0) {
+            System.out.print("\n");
+        }
+
+        System.out.println(text);
+
+        char[] after = new char[linesAfter];
+        if (after.length > 0) {
+            for (int i = 0; i < after.length; i++) {
+                System.out.print("\n");
+            }
+        }
+    }
 
 }
