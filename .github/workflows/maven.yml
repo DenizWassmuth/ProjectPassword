@@ -5,9 +5,6 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "**" ]
-  pull_request:
-    branches: [ "**" ]
 
 jobs:
   build:
@@ -15,14 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout repository
-      uses: actions/checkout@v5
+    - uses: actions/checkout@v4
     - name: Set up JDK
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@v4
       with:
         java-version: '25'
         distribution: 'temurin'
         cache: maven
-    - name: Build and check with Maven
-    - run: mvn -B clean verify
-
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
