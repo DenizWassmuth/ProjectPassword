@@ -97,6 +97,18 @@ class PasswordValidatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void isCommonPassword_shouldPass_whenGivenStringIsPartOfList () {
+
+        String givenString = "Password123";
+
+        boolean expected  = true;
+
+        boolean actual = PasswordValidator.isCommonPassword(givenString);
+
+        assertEquals(expected, actual);
+    }
 //
 //    @Test
 //    void containsSpecialChar() {
