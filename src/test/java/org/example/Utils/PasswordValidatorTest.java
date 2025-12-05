@@ -36,110 +36,22 @@ class PasswordValidatorTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    void containsUpperAndLower_ShouldPass_whenGivenStringHasOnlyUpper () {
 
-        String givenString = "HALLO";
-        boolean expected  = true;
+    @ParameterizedTest
+    @CsvSource({"abc#,false","Password,true","Password1,true","Password2,true","blubberBlubber,false" })
+    void isCommonPassword_shouldPass_whenGivenStringIsPartOfList (String givenPassword, boolean expected) {
 
-        boolean actual = Character.isUpperCase(givenString.charAt(0)) && Character.isLowerCase(givenString.charAt(1));
-
-        assertNotEquals(expected, actual);
-    }
-
-    @Test
-    void containsUpperAndLower_ShouldPass_whenGivenStringHasUpperAndLower () {
-
-        String givenString = "Hallo";
-        boolean expected  = true;
-
-        boolean actual = PasswordValidator.containsUpperAndLower(givenString);
+        boolean actual = PasswordValidator.isCommonPassword(givenPassword);
 
         assertEquals(expected, actual);
     }
 
-    @Test
-    void isCommonPassword_shouldPass_whenGivenStringIsPassword123 () {
 
-        String givenString = "Password123";
+    @ParameterizedTest
+    @CsvSource({"abcDEF123,false","#Password25!,true","Password1%,true","Pa??word20,true","blubber00Blubber,false" })
+    void containsSpecialChar_ShouldPass_whenGivenStringContainsAnyOfTheAllowedSpecialChars (String givenPassword, boolean expected) {
 
-        boolean expected  = true;
-
-        boolean actual = givenString.contains("Password123");
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void isCommonPassword_shouldPass_whenGivenStringIsPartOfList () {
-
-        String givenString = "Password";
-
-        boolean expected  = true;
-
-        boolean actual = PasswordValidator.isCommonPassword(givenString);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void isCommonPassword_shouldPass_whenGivenStringIsNotPartOfList () {
-
-        String givenString = "Hallo";
-
-        boolean expected  = false;
-
-        boolean actual = PasswordValidator.isCommonPassword(givenString);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void containsSpecialChar_ShouldPass_whenGivenStringContainsSpecialCharHashTagAtIndex0 () {
-
-        String givenString = "#Hallo";
-
-        boolean expected  = false;
-
-        boolean actual = Character.isLetterOrDigit(givenString.charAt(0));
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void containsSpecialChar_ShouldPass_whenGivenStringContainsNoSpecialAtIndex0 () {
-
-        String givenString = "Hallo";
-
-        boolean expected  = true;
-
-        boolean actual = Character.isLetterOrDigit(givenString.charAt(0));
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void containsSpecialChar_ShouldPass_whenGivenStringContainsAnyOfTheAllowedSpecialChars () {
-
-        String givenString = "Hallo!";
-        String specialChars = "!#*";
-
-        boolean expected  = true;
-
-        boolean actual = PasswordValidator.containsSpecialChar(givenString, specialChars);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void containsSpecialChar_ShouldPass_whenGivenStringContainsANoneListedSpecialChar () {
-
-        String givenString = "-Hallo";
-        String specialCharsAllowed = "!#*";
-
-        boolean expected  = false;
-
-        boolean actual = PasswordValidator.containsSpecialChar(givenString, specialCharsAllowed);
+        boolean actual = PasswordValidator.containsSpecialChar(givenPassword, PasswordValidator.specialChars);
 
         assertEquals(expected, actual);
     }
