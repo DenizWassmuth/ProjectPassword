@@ -10,34 +10,13 @@ class PasswordValidatorTest {
 
     @ParameterizedTest
     @CsvSource({"1234567,false","12345678,true","123456789,true","'',false",",false"})
-    void hasMinLength_shouldPass_whenGivenStringLengthEqualsTheMinLength(String givenPassword, boolean expected) {
+    void hasMinLength_shouldPass_whenGivenStringLengthEqualsTheMinLengthOf8(String givenPassword, boolean expected) {
 
         boolean actual = PasswordValidator.hasMinLength(givenPassword, 8);
 
         assertEquals(expected, actual);
     }
 
-    @Test
-    void hasMinLength_shouldPass_whenGivenStringLengthIsGreaterOrEqualTo5 () {
-
-        String givenString = "Hallo";
-        boolean expected  = true;
-
-        boolean actual = PasswordValidator.hasMinLength(givenString, 5);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void hasMinLength_shouldPass_whenGivenStringLengthIsSmallerThen5 () {
-
-        String givenString = "Hi";
-        boolean expected  = true;
-
-        boolean actual = PasswordValidator.hasMinLength(givenString, 5);
-
-        assertNotEquals(expected, actual);
-    }
 
     @Test
     void containsDigit_ShouldPass_whenGivenStringHasDigitAtIndex1 () {
