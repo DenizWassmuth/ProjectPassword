@@ -1,5 +1,6 @@
 package org.example.Utils;
 
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -68,6 +69,13 @@ public final class PasswordValidator {
         String[] commonPasswords = { "Password", "Password1", "Password2", "Password3", "Password4",
                 "Password5", "Password6", "Password7", "Password8", "Password9", "Password10",
                 "Password123", "AbCdeF"};
+
+
+        for (String commonPassword : commonPasswords) {
+            if (password.toLowerCase().equals(commonPassword.toLowerCase())) {
+                return true;
+            }
+        }
 
         return false;
 
