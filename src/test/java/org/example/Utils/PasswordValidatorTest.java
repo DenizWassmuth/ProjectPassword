@@ -141,7 +141,20 @@ class PasswordValidatorTest {
 
         boolean expected  = true;
 
-        boolean actual = ;
+        boolean actual = Character.isLetterOrDigit(givenString.charAt(0));
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void containsSpecialChar_ShouldPass_whenGivenStringContainsAnyOfTheAllowedSpecialChars () {
+
+        String givenString = "Hallo!";
+        String specialChars = "!#*";
+
+        boolean expected  = true;
+
+        boolean actual = PasswordValidator.containsSpecialChar(givenString, specialChars);
 
         assertEquals(expected, actual);
     }
