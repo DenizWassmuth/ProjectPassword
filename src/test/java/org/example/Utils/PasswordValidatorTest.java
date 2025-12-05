@@ -135,7 +135,7 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void containsSpecialChar_ShouldPass_whenGivenStringContainsNoSpecialCharHashTagAtIndex1 () {
+    void containsSpecialChar_ShouldPass_whenGivenStringContainsNoSpecialAtIndex0 () {
 
         String givenString = "Hallo";
 
