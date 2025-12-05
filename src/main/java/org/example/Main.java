@@ -26,6 +26,14 @@ public class Main {
                 continue;
 
             }
+
+            if (Input.equals("1")) {
+                bInput = true;
+            } else if (Input.matches("2")) {
+                bGenerate = true;
+            } else {
+                bExit = true;
+            }
         }
 
 
