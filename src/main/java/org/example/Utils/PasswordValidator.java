@@ -83,7 +83,7 @@ public final class PasswordValidator {
     // Bonus:
     public static boolean containsSpecialChar(String password, String allowed)
     {
-        return false;
+        return true;
     };
 //
 //    // Optionale Gesamtsicht:

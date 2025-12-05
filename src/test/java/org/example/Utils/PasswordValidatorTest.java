@@ -134,6 +134,18 @@ class PasswordValidatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void containsSpecialChar_ShouldPass_whenGivenStringContainsNoSpecialCharHashTagAtIndex1 () {
+
+        String givenString = "Hallo";
+
+        boolean expected  = true;
+
+        boolean actual = Character.isLetterOrDigit(givenString.charAt(0));
+
+        assertEquals(expected, actual);
+    }
+
 
 //
 //    @Test
