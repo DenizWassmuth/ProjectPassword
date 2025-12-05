@@ -109,18 +109,31 @@ public final class PasswordValidator {
     public static String specialChars = "!#-**?<>|&%$=)(";
 
     public static boolean isValid(String password) {
+
         if (password == null) {
             return false;
         }
 
-        boolean bIsValid = false;
+        if (!hasMinLength(password, 8)){
+            return false;
+        }
 
-        bIsValid = hasMinLength(password, 8);
-        bIsValid = containsDigit(password);
-        bIsValid = containsUpperAndLower(password);
-        bIsValid = !isCommonPassword(password);
-        bIsValid = containsSpecialChar(password, specialChars);
+        if (!containsDigit(password)) {
+            return false;
+        }
 
-        return bIsValid;
+        if(!containsUpperAndLower(password)) {
+            return false;
+        }
+
+        if (!containsSpecialChar(password, specialChars)) {
+            return false;
+        }
+
+        if (isCommonPassword(password)) {
+            return false;
+        }
+
+        return true;
     }
 }
