@@ -59,8 +59,14 @@ public final class PasswordValidator {
     }
 
 
-//    public static boolean isCommonPassword(String password); // kleine interne Liste
-//
+    public static boolean isCommonPassword(String password){
+
+        if (password == null) { return false; }
+
+        return false;
+
+    }; // kleine interne Liste
+
 //    // Bonus:
 //    public static boolean containsSpecialChar(String password, String allowed);
 //
