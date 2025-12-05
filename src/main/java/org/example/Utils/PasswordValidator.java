@@ -85,8 +85,6 @@ public final class PasswordValidator {
 
     }
 
-    ;
-
     // Bonus:
     public static boolean containsSpecialChar(String password, String allowed) {
         if (password == null) {
@@ -108,8 +106,6 @@ public final class PasswordValidator {
         return false;
     }
 
-    ;
-
     public static String specialChars = "!#-**?<>|&%$=)(";
 
     public static boolean isValid(String password) {
@@ -127,6 +123,4 @@ public final class PasswordValidator {
 
         return bIsValid;
     }
-
-    ;
 }

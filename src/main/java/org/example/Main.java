@@ -12,18 +12,33 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        UtilsLibrary.printText(1, "Hallo, bitte geben sie ein Password ein: ", 0);
-        String InputPassword = sc.nextLine();
+        boolean bExit = false;
+        boolean bGenerate = false;
+        boolean bInput = false;
 
-        UtilsLibrary.printText(1, "Ihr Passwort lautet: " + InputPassword, 1);
+        while (!bExit && !bGenerate && !bInput) {
 
-        String outPut = "Passwort akzeptiert!";
-        if(!PasswordValidator.isValid(InputPassword)) {
+            UtilsLibrary.printText(1, "Hallo, wie kann ich ihnen helfen?", 0);
+            UtilsLibrary.printText(0, "1 = Passwort eingeben, 2 = Passwort automatisch generieren, 0 = Exit", 0);
+            String Input = sc.nextLine();
+            if (Input.isEmpty() || Input.length() > 1 || !Input.matches("[0-2]")) {
 
-            outPut = "Passwort nicht akzeptiert!";
+                continue;
+
+            }
         }
 
-        UtilsLibrary.printText(2, outPut, 1);
+
+
+//        UtilsLibrary.printText(1, "Ihr Passwort lautet: " + InputPassword, 1);
+//
+//        String outPut = "Passwort akzeptiert!";
+//        if(!PasswordValidator.isValid(InputPassword)) {
+//
+//            outPut = "Passwort nicht akzeptiert!";
+//        }
+//
+//        UtilsLibrary.printText(2, outPut, 1);
 
     }
 }
