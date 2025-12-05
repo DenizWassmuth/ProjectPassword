@@ -56,16 +56,16 @@ public final class PasswordValidator {
         }
 
         boolean bHasUpper = false;
-        for (int i = 0; i < password.length(); i++) {
-            if (Character.isUpperCase(password.charAt(i))) {
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(password.charAt(c))) {
                 bHasUpper = true;
                 break;
             }
         }
 
         boolean bHasLower = false;
-        for (int i = 0; i < password.length(); i++) {
-            if (Character.isLowerCase(password.charAt(i))) {
+        for (char c : password.toCharArray()) {
+            if (Character.isLowerCase(password.charAt(c))) {
                 bHasLower = true;
                 break;
             }
