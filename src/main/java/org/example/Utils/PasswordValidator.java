@@ -16,7 +16,7 @@ public final class PasswordValidator {
 
     public static boolean hasMinLength(String password, int min){
         return password.length() >= min;
-    };
+    }
 
     public static boolean containsDigit(String password){
 
@@ -32,7 +32,7 @@ public final class PasswordValidator {
         }
 
         return false;
-    };
+    }
 
 
     public static boolean containsUpperAndLower(String password){
@@ -47,8 +47,16 @@ public final class PasswordValidator {
             }
         }
 
-        return false;
-    };
+        boolean bHasLower = false;
+        for(int i = 0; i < password.length(); i++){
+            if (Character.isLowerCase(password.charAt(i))) {
+                bHasLower = true;
+                return true;
+            }
+        }
+
+        return bHasLower && bHasUpper;
+    }
 
 
 //    public static boolean isCommonPassword(String password); // kleine interne Liste
