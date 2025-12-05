@@ -62,13 +62,16 @@ public final class PasswordValidator {
     }
 
 
+    public static Set<String> commonPasswords = Set.of( "Password", "Password1", "Password2", "Password3", "Password4",
+            "Password5", "Password6", "Password7", "Password8", "Password9", "Password10", "Password123", "AbCdeF");
+
     public static boolean isCommonPassword(String password){
 
         if (password == null) { return false; }
 
-        String[] commonPasswords = { "Password", "Password1", "Password2", "Password3", "Password4",
-                "Password5", "Password6", "Password7", "Password8", "Password9", "Password10",
-                "Password123", "AbCdeF"};
+//        String[] commonPasswords = { "Password", "Password1", "Password2", "Password3", "Password4",
+//                "Password5", "Password6", "Password7", "Password8", "Password9", "Password10",
+//                "Password123", "AbCdeF"};
 
 
         for (String commonPassword : commonPasswords) {
