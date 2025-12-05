@@ -122,6 +122,19 @@ class PasswordValidatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void isCommonPassword_shouldPass_whenGivenStringIsAddedToList () {
+
+        String givenString = "Hallo";
+        PasswordValidator.commonPasswords.add(givenString);
+
+        boolean expected  = true;
+
+        boolean actual = PasswordValidator.isCommonPassword(givenString);
+
+        assertEquals(expected, actual);
+    }
+
 
     @Test
     void containsSpecialChar() {
