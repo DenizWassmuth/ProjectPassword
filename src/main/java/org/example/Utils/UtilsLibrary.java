@@ -14,11 +14,13 @@ package org.example.Utils;
 
 public class UtilsLibrary {
 
-    public static void printText(String text, int linesBefore, int linesAfter) {
+    public static void printText(int linesBefore, String text, int linesAfter) {
 
         char[] before = new char[linesBefore];
         if (before.length > 0) {
-            System.out.print("\n");
+            for (int i = 0; i < before.length; i++) {
+                System.out.print("\n");
+            }
         }
 
         System.out.println(text);
