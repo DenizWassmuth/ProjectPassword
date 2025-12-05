@@ -83,7 +83,21 @@ public final class PasswordValidator {
     // Bonus:
     public static boolean containsSpecialChar(String password, String allowed)
     {
-        return true;
+        if (password == null) { return false; }
+
+        char[] chars = password.toCharArray();
+
+        for (char c : password.toCharArray()) {
+            if (!Character.isLetterOrDigit(c)) {
+                for (char c2 : allowed.toCharArray()) {
+                    if (c == c2) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     };
 //
 //    // Optionale Gesamtsicht:

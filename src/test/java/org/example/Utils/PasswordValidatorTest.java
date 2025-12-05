@@ -141,7 +141,7 @@ class PasswordValidatorTest {
 
         boolean expected  = true;
 
-        boolean actual = Character.isLetterOrDigit(givenString.charAt(0));
+        boolean actual = ;
 
         assertEquals(expected, actual);
     }
