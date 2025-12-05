@@ -184,4 +184,16 @@ class PasswordValidatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void isValid_shouldPass_whenGivenStringHasNoDigit () {
+
+        String givenString = "#Hallooo";
+
+        boolean expected  = false;
+
+        boolean actual = PasswordValidator.isValid(givenString);
+
+        assertEquals(expected, actual);
+    }
 }
