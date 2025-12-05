@@ -21,7 +21,7 @@ public class Main {
             UtilsLibrary.printText(1, "Hallo, wie kann ich ihnen helfen?", 0);
             UtilsLibrary.printText(0, "1 = Passwort eingeben, 2 = Passwort automatisch generieren, 0 = Exit", 0);
             String Input = sc.nextLine();
-            if (Input.isEmpty() || Input.length() > 1 || !Input.matches("[0-2]")) {
+            if (Input.isEmpty() || !Input.matches("[0-2]")) {
 
                 continue;
             }
