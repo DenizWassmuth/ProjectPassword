@@ -24,7 +24,6 @@ public class Main {
             if (Input.isEmpty() || Input.length() > 1 || !Input.matches("[0-2]")) {
 
                 continue;
-
             }
 
             if (Input.equals("1")) {
@@ -35,6 +34,31 @@ public class Main {
                 bExit = true;
             }
         }
+
+        // add while password != confirmationPassword or 0 = exit
+        if (bInput) {
+            UtilsLibrary.printText(1, "Bitte geben sie ihren Namen ein: ", 0);
+            String Name = sc.nextLine();
+            UtilsLibrary.printText(1, "Hallo" + Name, 1);
+            UtilsLibrary.printText(0, "Bitte Passwort eingeben: ", 0);
+            String password = sc.nextLine();
+
+            if (PasswordValidator.isValid(password)) {
+                UtilsLibrary.printText(1, "Bitte Passwort wiederholen: ", 0);
+                String confirmationPassword = sc.nextLine();
+
+                if (confirmationPassword.equals(password)) {
+                    UtilsLibrary.printText(1, "Danke " + Name, 0);
+                    UtilsLibrary.printText(0, "Ihr Passwort wurde gespeichert", 0);
+
+                    String savedPassword = confirmationPassword;
+
+                    UtilsLibrary.printText(1, "Auf wiedersehen...", 1);
+                }
+            }
+        }
+
+
 
 
 
