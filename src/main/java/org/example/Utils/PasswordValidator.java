@@ -110,6 +110,7 @@ public final class PasswordValidator {
         bIsValid = hasMinLength(password, 8);
         bIsValid = containsDigit(password);
         bIsValid = containsUpperAndLower(password);
+        bIsValid = !isCommonPassword(password);
         bIsValid = containsSpecialChar(password, password);
 
         return bIsValid;
