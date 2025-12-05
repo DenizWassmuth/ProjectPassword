@@ -18,7 +18,7 @@ class PasswordValidatorTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"1a2b3c#,true", "aBcDe!,false"})
+    @CsvSource({"1a2b3c#,true","aBcDe!,false"})
     void containsDigit_ShouldPass_whenGivenStringHasDigits(String givenPassword, boolean expected) {
 
         boolean actual = PasswordValidator.containsDigit(givenPassword);
@@ -28,8 +28,8 @@ class PasswordValidatorTest {
 
 
     @ParameterizedTest
-    @CsvSource({"abc#,false", "2aBcDe!,true"})
-    void containsUpperAndLower_ShouldPass_whenGivenStringHasUpperAndLower (String givenPassword, boolean expected) {
+    @CsvSource({"abc#,false","2aBcDe!,true"})
+    void containsUpperAndLower_ShouldPass_whenGivenStringHasUpperAndLower(String givenPassword, boolean expected) {
 
        boolean actual = PasswordValidator.containsUpperAndLower(givenPassword);
 
