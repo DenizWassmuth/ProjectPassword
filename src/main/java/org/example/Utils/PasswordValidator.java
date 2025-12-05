@@ -43,7 +43,7 @@ public final class PasswordValidator {
         for(int i = 0; i < password.length(); i++){
             if (Character.isUpperCase(password.charAt(i))) {
                 bHasUpper = true;
-                break;
+                return true;
             }
         }
 
