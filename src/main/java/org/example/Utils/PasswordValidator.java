@@ -76,12 +76,10 @@ public final class PasswordValidator {
 
     public static boolean isCommonPassword(String password) {
 
-        if (password == null) {
-            return false;
-        }
+        password = password == null ? "" : password.trim().toLowerCase(Locale.ROOT);
 
         for (String commonPassword : commonPasswords) {
-            if (password.trim().toLowerCase(Locale.ROOT).equals(commonPassword.trim().toLowerCase(Locale.ROOT))) {
+            if (password.equals(commonPassword.trim().toLowerCase(Locale.ROOT))) {
                 return true;
             }
         }
