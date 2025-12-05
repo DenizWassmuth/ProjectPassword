@@ -39,26 +39,36 @@ public class Main {
         String Name = sc.nextLine();
         UtilsLibrary.printText(1, "Hallo" + Name, 1);
 
-        String confirmationPassword = "";
+        String password = "a";
+        String confirmationPassword = "b";
+
         // TODO:add while password != confirmationPassword or 0 = exit
         if (bInput) {
 
-            UtilsLibrary.printText(0, "Bitte Passwort eingeben: ", 0);
-            String password = sc.nextLine();
+            while (!password.equals(confirmationPassword)) {
 
-            if (PasswordValidator.isValid(password)) {
-                UtilsLibrary.printText(1, "Bitte Passwort wiederholen: ", 0);
-                confirmationPassword = sc.nextLine();
+                UtilsLibrary.printText(0, "Bitte Passwort eingeben: ", 0);
+                password = sc.nextLine();
 
-                if (confirmationPassword.equals(password)) {
-                    UtilsLibrary.printText(1, "Danke " + Name, 0);
-                    UtilsLibrary.printText(0, "Ihr Passwort wurde gespeichert", 0);
+                if (PasswordValidator.isValid(password)) {
+                    UtilsLibrary.printText(1, "Bitte Passwort bestätigen: ", 0);
+                    confirmationPassword = sc.nextLine();
 
-                    String savedPassword = confirmationPassword;
+                    if (confirmationPassword.equals(password)) {
+                        UtilsLibrary.printText(1, "Danke " + Name, 0);
+                        UtilsLibrary.printText(0, "Ihr Passwort wurde gespeichert", 0);
 
-                    UtilsLibrary.printText(1, "Auf wiedersehen...", 1);
+                        String savedPassword = confirmationPassword;
+
+                        UtilsLibrary.printText(1, "Auf wiedersehen...", 1);
+                    }
+                    else{
+                        UtilsLibrary.printText(1, "Bitte Passwort wiederholen " + Name, 1);
+                    }
                 }
+
             }
+
         }
 
 
