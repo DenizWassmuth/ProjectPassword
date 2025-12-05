@@ -15,7 +15,7 @@ import java.security.SecureRandom;
  */
 
 
-// prints String with line break before and after the text
+// prints String with line break before and after text
 public class UtilsLibrary {
 
     public static void printText(int linesBefore, String text, int linesAfter) {
