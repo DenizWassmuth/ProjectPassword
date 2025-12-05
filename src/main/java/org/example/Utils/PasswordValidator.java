@@ -79,6 +79,8 @@ public final class PasswordValidator {
             }
         }
 
+        return false;
+
     }; // kleine interne Liste
 
 //    // Bonus:
