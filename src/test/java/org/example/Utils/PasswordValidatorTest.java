@@ -159,6 +159,19 @@ class PasswordValidatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void containsSpecialChar_ShouldPass_whenGivenStringContainsANoneListedSpecialChar () {
+
+        String givenString = "-Hallo";
+        String specialCharsAllowed = "!#*";
+
+        boolean expected  = false;
+
+        boolean actual = PasswordValidator.containsSpecialChar(givenString, specialCharsAllowed);
+
+        assertEquals(expected, actual);
+    }
+
 
 //
 //    @Test
