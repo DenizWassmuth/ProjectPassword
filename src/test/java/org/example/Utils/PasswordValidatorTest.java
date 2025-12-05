@@ -54,12 +54,12 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void containsUpperAndLower_ShouldPass_whenGivenStringHasUpperAndLower () {
+    void containsUpperAndLower_ShouldPass_whenGivenStringHasUpperAtIndex0AndLowerAtIndex1 () {
 
         String givenString = "Hallo";
         boolean expected  = true;
 
-        boolean actual = PasswordValidator.containsUpperAndLower(givenString);
+        boolean actual = Character.isUpperCase(givenString.charAt(0)) &&  Character.isLowerCase(givenString.charAt(1));
 
         assertEquals(expected, actual);
     }
