@@ -10,7 +10,7 @@ class PasswordValidatorTest {
 
     @ParameterizedTest
     @CsvSource({"1234567,false","12345678,true","123456789,true","'',false",",false"})
-    void hasMinLength_shouldPass_whenGivenStringLengthEqualsTheMinLengthOf8(String givenPassword, boolean expected) {
+    void hasMinLength_shouldPass_whenGivenStringLengthEqualsTheMinLengthOf8Chars(String givenPassword, boolean expected) {
 
         boolean actual = PasswordValidator.hasMinLength(givenPassword, 8);
 
@@ -18,7 +18,7 @@ class PasswordValidatorTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"1a2b3c,true", "abcde,false"})
+    @CsvSource({"1a2b3c#,true", "aBcDe!,false"})
     void containsDigit_ShouldPass_whenGivenStringHasDigits(String givenPassword, boolean expected) {
 
         boolean actual = PasswordValidator.containsDigit(givenPassword);
@@ -26,38 +26,12 @@ class PasswordValidatorTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    void containsDigit_ShouldPass_whenGivenStringHasDigitAtIndex1 () {
 
-        String givenString = "H4llo";
-        boolean expected  = true;
+    @ParameterizedTest
+    @CsvSource({"abc#,false", "2aBcDe!,true"})
+    void containsUpperAndLower_ShouldPass_whenGivenStringHasUpperAndLower (String givenPassword, boolean expected) {
 
-        //boolean actual = Character.isDigit(givenString.toCharArray()[1]);
-        boolean actual = PasswordValidator.containsDigit(givenString);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void containsDigit_ShouldPass_whenGivenStringHasNoDigit () {
-
-        String givenString = "Hallo";
-
-        boolean expected  = true;
-
-        //boolean actual = Character.isDigit(givenString.toCharArray()[1]);
-        boolean actual = PasswordValidator.containsDigit(givenString);
-
-        assertNotEquals(expected, actual);
-    }
-
-    @Test
-    void containsUpperAndLower_ShouldPass_whenGivenStringHasUpperAtIndex0AndLowerAtIndex1 () {
-
-        String givenString = "Hallo";
-        boolean expected  = true;
-
-       boolean actual = Character.isUpperCase(givenString.charAt(0)) && Character.isLowerCase(givenString.charAt(1));
+       boolean actual = PasswordValidator.containsUpperAndLower(givenPassword);
 
         assertEquals(expected, actual);
     }

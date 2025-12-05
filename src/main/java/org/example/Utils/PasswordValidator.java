@@ -109,7 +109,6 @@ public final class PasswordValidator {
     }
 
 
-
     public static boolean isValid(String password) {
 
         if (password == null) {
@@ -118,7 +117,7 @@ public final class PasswordValidator {
         }
 
         if (!hasMinLength(password, 8)){
-            UtilsLibrary.printText(1,"Passwort ist zu kurz!", 1);
+            UtilsLibrary.printText(1,"Passwort ist zu kurz! Mindestens 8 Zeichen!", 1);
             return false;
         }
 
@@ -128,7 +127,7 @@ public final class PasswordValidator {
         }
 
         if(!containsUpperAndLower(password)) {
-            UtilsLibrary.printText(1,"Passwort muss Groß- und Kleinbuchtsaben enthalten!", 1);
+            UtilsLibrary.printText(1,"Passwort muss Groß- und Kleinbuchstaben enthalten!", 1);
             return false;
         }
 
