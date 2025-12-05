@@ -175,6 +175,14 @@ class PasswordValidatorTest {
 
 
     @Test
-    void isValid() {
+    void isValid_shouldPass_whenGivenStringIsNotNull() {
+        String givenString = "Hallo";
+
+        boolean expected  = true;
+
+        boolean actual = PasswordValidator.isValid(givenString);
+
+        assertEquals(expected, actual);
+
     }
 }
