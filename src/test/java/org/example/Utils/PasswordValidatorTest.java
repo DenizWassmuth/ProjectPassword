@@ -53,9 +53,16 @@ class PasswordValidatorTest {
         assertNotEquals(expected, actual);
     }
 
-//    @Test
-//    void containsUpperAndLower() {
-//    }
+    @Test
+    void containsUpperAndLower_ShouldPass_whenGivenStringHasUpperAndLower () {
+
+        String givenString = "Hallo";
+        boolean expected  = true;
+
+        boolean actual = PasswordValidator.containsUpperAndLower(givenString);
+
+        assertEquals(expected, actual);
+    }
 //
 //    @Test
 //    void isCommonPassword() {

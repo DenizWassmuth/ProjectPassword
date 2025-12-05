@@ -33,7 +33,24 @@ public final class PasswordValidator {
 
         return false;
     };
-//    public static boolean containsUpperAndLower(String password);
+
+
+    public static boolean containsUpperAndLower(String password){
+
+        if (password == null) { return false; }
+
+        boolean bHasUpper = false;
+        for(int i = 0; i < password.length(); i++){
+            if (Character.isUpperCase(password.charAt(i))) {
+                bHasUpper = true;
+                break;
+            }
+        }
+
+        return false;
+    };
+
+
 //    public static boolean isCommonPassword(String password); // kleine interne Liste
 //
 //    // Bonus:
