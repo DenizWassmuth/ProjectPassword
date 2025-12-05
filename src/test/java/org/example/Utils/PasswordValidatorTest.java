@@ -173,8 +173,8 @@ class PasswordValidatorTest {
     }
 
 
-//
-//    @Test
-//    void isValid() {
-//    }
+
+    @Test
+    void isValid() {
+    }
 }

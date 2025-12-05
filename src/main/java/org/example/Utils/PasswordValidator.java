@@ -99,7 +99,10 @@ public final class PasswordValidator {
 
         return false;
     };
-//
-//    // Optionale Gesamtsicht:
-//    public static boolean isValid(String password); // nutzt die obenstehenden Checks
+
+
+    public static boolean isValid(String password)
+    {
+        return false;
+    };
 }
