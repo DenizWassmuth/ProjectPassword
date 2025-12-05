@@ -15,7 +15,6 @@ import java.util.Set;
  */
 
 public final class PasswordValidator {
-
     public static boolean hasMinLength(String password, int min) {
         return password.length() >= min;
     }
@@ -37,7 +36,6 @@ public final class PasswordValidator {
 
         return false;
     }
-
 
     public static boolean containsUpperAndLower(String password) {
 
@@ -67,8 +65,6 @@ public final class PasswordValidator {
 
     public static Set<String> commonPasswords = Set.of("Password", "Password1", "Password2", "Password3", "Password4",
             "Password5", "Password6", "Password7", "Password8", "Password9", "Password10", "Password123", "AbCdeF");
-
-
     public static boolean isCommonPassword(String password) {
 
         if (password == null) {
@@ -85,8 +81,8 @@ public final class PasswordValidator {
 
     }
 
-    // Bonus:
     public static boolean containsSpecialChar(String password, String allowed) {
+
         if (password == null) {
             return false;
         }
@@ -106,8 +102,8 @@ public final class PasswordValidator {
         return false;
     }
 
-    public static String specialChars = "!#-**?<>|&%$=)(";
 
+    public static String specialChars = "!#-**?<>|&%$=)(";
     public static boolean isValid(String password) {
 
         if (password == null) {
