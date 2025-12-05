@@ -14,12 +14,14 @@ import java.util.Set;
  * - exclude previously added files from git changes through GitBash (git rm -r) and readd the files needed (git add .)
  */
 
-public static Set<String> commonPasswords = Set.of("Password", "Password1", "Password2", "Password3", "Password4",
-        "Password5", "Password6", "Password7", "Password8", "Password9", "Password10", "Password123", "AbCdeF");
 
-public static String specialChars = "!#-**?<>|&%$=)(";
 
 public final class PasswordValidator {
+
+    public static Set<String> commonPasswords = Set.of("Password", "Password1", "Password2", "Password3", "Password4",
+            "Password5", "Password6", "Password7", "Password8", "Password9", "Password10", "Password123", "AbCdeF");
+
+    public static String specialChars = "!#-**?<>|&%$=)(";
     public static boolean hasMinLength(String password, int min) {
 
         if (password == null) {
