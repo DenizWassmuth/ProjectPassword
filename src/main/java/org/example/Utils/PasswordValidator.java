@@ -107,26 +107,32 @@ public final class PasswordValidator {
     public static boolean isValid(String password) {
 
         if (password == null) {
+            UtilsLibrary.printText(1,"no input", 1);
             return false;
         }
 
         if (!hasMinLength(password, 8)){
+            UtilsLibrary.printText(1,"Passwort ist zu kurz!", 1);
             return false;
         }
 
         if (!containsDigit(password)) {
+            UtilsLibrary.printText(1,"Passwort enthält keine Zahl!", 1);
             return false;
         }
 
         if(!containsUpperAndLower(password)) {
+            UtilsLibrary.printText(1,"Passwort muss Groß- und Kleinbuchtsaben enthalten!", 1);
             return false;
         }
 
         if (!containsSpecialChar(password, specialChars)) {
+            UtilsLibrary.printText(1,"Passwort muss mindestens einen der folgenden Zeichen enthalten: " + specialChars, 1);
             return false;
         }
 
         if (isCommonPassword(password)) {
+            UtilsLibrary.printText(1,"Passwort ist zu einfach", 1);
             return false;
         }
 
