@@ -1,5 +1,5 @@
 > **Projektziel:**  
-> Dieses Projekt stellt eine kleine Java-Bibliothek zur Passwortvalidierung bereit – inklusive automatisierter Tests (JUnit 5), Maven-Build und GitHub Actions CI. Optional kann ein einfaches CLI-Tool verwendet werden, um Passwörter über die Konsole zu prüfen.
+> Dieses Projekt stellt eine kleine Java-Bibliothek zur Passwortvalidierung bereit – inklusive automatisierter Tests (JUnit 5), Maven-Build und GitHub Actions CI.
 
 ---
 
