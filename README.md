@@ -12,11 +12,10 @@ Die aktuelle Basis-Policy bewertet ein Passwort als **gültig**, wenn alle folge
 - Groß- und Kleinbuchstaben: mindestens ein Großbuchstabe und ein Kleinbuchstabe sind enthalten
 - Kein häufiges Passwort: das Passwort steht nicht in einer internen Liste häufiger/schwacher Passwörter  
   (z. B. `password`, `Passwort1`, `12345678`, `Aa345678`, …)
-
-/* noch nicht integriert
 - Sonderzeichen: mindestens ein erlaubtes Sonderzeichen (z. B. `!@#$%^&*()-_+=?.,;:`)
+  
+  // nocht nicht integriert
 - Zeichengruppen: Mindestanzahl verschiedener Zeichentypen (z. B. 3 von 4: Großbuchstaben, Kleinbuchstaben, Ziffern, Sonderzeichen)
-*/
 
 Die genaue Policy ist im Code (z. B. in `PasswordValidator.isValid(...)`) und in den Unit-Tests nachvollziehbar dokumentiert.
 
