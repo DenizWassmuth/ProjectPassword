@@ -80,8 +80,11 @@ public final class PasswordValidator {
 
     };
 
-//    // Bonus:
-//    public static boolean containsSpecialChar(String password, String allowed);
+    // Bonus:
+    public static boolean containsSpecialChar(String password, String allowed)
+    {
+        return false;
+    };
 //
 //    // Optionale Gesamtsicht:
 //    public static boolean isValid(String password); // nutzt die obenstehenden Checks
