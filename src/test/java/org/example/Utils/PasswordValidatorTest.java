@@ -109,6 +109,19 @@ class PasswordValidatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void isCommonPassword_shouldPass_whenGivenStringIsNotPartOfList () {
+
+        String givenString = "Hallo";
+
+        boolean expected  = false;
+
+        boolean actual = PasswordValidator.isCommonPassword(givenString);
+
+        assertEquals(expected, actual);
+    }
+
 //
 //    @Test
 //    void containsSpecialChar() {
