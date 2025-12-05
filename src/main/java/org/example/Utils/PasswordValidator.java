@@ -76,10 +76,12 @@ public final class PasswordValidator {
 
     public static boolean isCommonPassword(String password) {
 
+        // Locale.Root is for language localisation
         password = password == null ? "" : password.trim().toLowerCase(Locale.ROOT);
 
         for (String commonPassword : commonPasswords) {
-            if (password.equals(commonPassword.trim().toLowerCase(Locale.ROOT))) {
+            commonPassword = commonPassword.trim().toLowerCase(Locale.ROOT);
+            if (password.equals(commonPassword)) {
                 return true;
             }
         }
@@ -92,8 +94,6 @@ public final class PasswordValidator {
         if (password == null) {
             return false;
         }
-
-        char[] chars = password.toCharArray();
 
         for (char c : password.toCharArray()) {
             if (!Character.isLetterOrDigit(c)) {
