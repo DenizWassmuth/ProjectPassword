@@ -38,10 +38,9 @@ public final class PasswordValidator {
         }
 
         char[] chars = password.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
+        for (char c : chars) {
 
-            if (Character.isDigit(chars[i])) {
-
+            if (Character.isDigit(c)) {
                 return true;
             }
         }
@@ -59,6 +58,7 @@ public final class PasswordValidator {
         for (int i = 0; i < password.length(); i++) {
             if (Character.isUpperCase(password.charAt(i))) {
                 bHasUpper = true;
+                break;
             }
         }
 
@@ -66,6 +66,7 @@ public final class PasswordValidator {
         for (int i = 0; i < password.length(); i++) {
             if (Character.isLowerCase(password.charAt(i))) {
                 bHasLower = true;
+                break;
             }
         }
 
