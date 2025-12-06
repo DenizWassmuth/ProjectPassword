@@ -25,7 +25,7 @@ public class Main {
                 continue;
             }
 
-            if (Input.equals("1")) {
+            if (Input.matches("1")) {
                 bInput = true;
             } else if (Input.matches("2")) {
                 bGenerate = true;
@@ -45,34 +45,32 @@ public class Main {
         // TODO:add while password != confirmationPassword or 0 = exit
         if (bInput) {
 
-            while (!password.equals(confirmationPassword)) {
+            while (!PasswordValidator.isValid(password)) {
 
                 UtilsLibrary.printText(0, "Bitte Passwort eingeben: ", 0);
                 password = sc.nextLine();
+            }
 
-                if (PasswordValidator.isValid(password)) {
-                    UtilsLibrary.printText(1, "Bitte Passwort bestätigen: ", 0);
-                    confirmationPassword = sc.nextLine();
+            while (!password.equals(confirmationPassword)) {
 
-                    if (confirmationPassword.equals(password)) {
-                        UtilsLibrary.printText(1, "Danke " + Name, 0);
-                        UtilsLibrary.printText(0, "Ihr Passwort wurde gespeichert", 0);
+                UtilsLibrary.printText(1, "Bitte Passwort bestätigen: ", 0);
+                confirmationPassword = sc.nextLine();
 
-                        String savedPassword = confirmationPassword;
+                if (confirmationPassword.equals(password)) {
+                    UtilsLibrary.printText(1, "Danke " + Name, 0);
+                    UtilsLibrary.printText(0, "Ihr Passwort wurde gespeichert", 0);
 
-                        UtilsLibrary.printText(1, "Auf wiedersehen...", 1);
-                    }
-                    else{
-                        UtilsLibrary.printText(1, "Bitte Passwort wiederholen " + Name, 1);
-                    }
+                    String savedPassword = confirmationPassword;
+
+                    UtilsLibrary.printText(1, "Auf wiedersehen...", 1);
+
+                } else {
+                    UtilsLibrary.printText(1, "Eingaben stimmen nicht überein!", 1);
                 }
-
             }
 
         }
-
-
-
+    }
 
 
 //        UtilsLibrary.printText(1, "Ihr Passwort lautet: " + InputPassword, 1);
@@ -85,5 +83,5 @@ public class Main {
 //
 //        UtilsLibrary.printText(2, outPut, 1);
 
-    }
+
 }
