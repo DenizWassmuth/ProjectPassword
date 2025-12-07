@@ -22,7 +22,8 @@ public class Main {
             UtilsLibrary.printText(1, "Hallo, wie kann ich ihnen helfen?", 0);
             UtilsLibrary.printText(0, "1 = Passwort eingeben, 2 = Passwort automatisch generieren, 0 = Exit", 0);
 
-            String input = sc.nextLine();
+            // trim will shorten the string to its "actual" literal input
+            String input = sc.nextLine().trim();
             if (input.isBlank() || !Character.isDigit(input.charAt(0))) {
                 continue;
             }
