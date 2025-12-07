@@ -13,7 +13,7 @@ import java.util.Set;
  * - check and/or change user and email through GitBash
  * - add /target, *.iml and .idea to gitignore
  * - exclude previously added files from git changes through GitBash (git rm -r) and readd the files needed (git add .)
- *   -> maven mostly handles this automatically after changing gitignore.xml
+ *   -> maven mostly handles this automatically after changing gitignore
  *
  *  add dependency: junit-jupiter
  *
